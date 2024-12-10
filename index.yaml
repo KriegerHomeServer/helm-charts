@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  blockydns:
+  - apiVersion: v2
+    appVersion: "0.24"
+    created: "2024-12-10T00:56:24.763422178Z"
+    description: A Helm chart for deploying the Blocky DNS
+    digest: 1cd2e1c9448f36979ee3435eb017ae1adef2492db0277f2c78a5e6c1a77cf8a8
+    name: blockydns
+    type: application
+    urls:
+    - https://github.com/KriegerHomeServer/helm-charts/releases/download/blockydns-1.0.0/blockydns-1.0.0.tgz
+    version: 1.0.0
+generated: "2024-12-10T00:56:24.763434392Z"
