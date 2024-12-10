@@ -9,7 +9,7 @@ data:
     upstreams:
       groups:
         default:
-{{ toYaml .Values.config.upstreamDnsServer | indent 10}}
+{{ toYaml .Values.config.upstreamDnsServers | indent 10}}
     blocking:
       denylists:
         ads:
