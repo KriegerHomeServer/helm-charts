@@ -16,7 +16,6 @@ spec:
           - name: dns-mapping-job
             image: {{ .Values.cronjob.image.repository | default "teegank/kubernetes-utils" }}:{{ .Values.cronjob.image.tag | default "latest" }}
             imagePullPolicy: {{ .Values.cronjob.image.pullPolicy | default "IfNotPresent" }}
-            restartPolicy: Never
             command:
             - /bin/bash
             - -c
