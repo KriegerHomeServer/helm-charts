@@ -5,12 +5,13 @@ metadata:
   name: update-blocky-dns-mappings-job
   namespace: {{ .Release.Namespace }}
 spec:
-  schedule: {{ .Values.cronjob.schedule | default "*/5 * * * *" }}
+  schedule: "{{ .Values.cronjob.schedule | default "*/5 * * * *" }}"
   jobTemplate:
     spec:
       template:
         spec:
           serviceAccountName: blocky-cronjob-sa
+          restartPolicy: Never
           containers:
           - name: dns-mapping-job
             image: {{ .Values.cronjob.image.repository | default "teegank/kubernetes-utils" }}:{{ .Values.cronjob.image.tag | default "latest" }}

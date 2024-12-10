@@ -17,8 +17,8 @@
 ### Parameters
 |               Parameter                |                                        Description                                        |                             Default Value                              |
 | :------------------------------------: | :---------------------------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-|      `config.upstreamDnsServers`       |       List of hosts or ip addresses of upstream DNS servers to answer requests with       |                        `['8.8.8.8','8.8.4.4']`                         |
 |          `config.blockLists`           |                     List of urls containing lists of domains to block                     | `['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']` |
+|      `config.upstreamDnsServers`       |       List of hosts or ip addresses of upstream DNS servers to answer requests with       |                        `['8.8.8.8','8.8.4.4']`                         |
 |       `cronjob.image.pullPolicy`       |                               The image pull policy to use                                |                            `"IfNotPresent"`                            |
 |       `cronjob.image.repository`       |                     The repository to fetch the container image from                      |                       `teegank/kubernetes-utils`                       |
 |          `cronjob.image.tag`           |                          The tag of the container image to fetch                          |                                `latest`                                |
