@@ -1,0 +1,29 @@
+config:
+  blockLists:
+    - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+  upstreamDnsServers:
+    - 8.8.8.8
+    - 8.8.4.4
+cronjob:
+  image:
+    pullPolicy: "IfNotPresent"
+    repository: "teegank/kubernetes-utils"
+    tag: "latest"
+  schedule: "*/5 * * * *"
+deployment:
+  httpPort: 4000
+  image:
+    pullPolicy: "IfNotPresent"
+    repository: "spx01/blocky"
+    tag: "latest"
+  replicaCount: 1
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
+service:
+  loadBalancerIP: ""
+  type: LoadBalancer
