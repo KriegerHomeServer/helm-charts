@@ -1,18 +1,18 @@
 ### Resources Created
-| Kind | Name | Description |
-|------|------|-------------|
-| `CustomResourceDefinition` | <span>dnsmappings.blocky.io</span> | CRD providing a resource other charts can create to define custom DNS mappings |
-| `ClusterRole` | read-dnsmappings | Allows cluster-wide read access to DnsMappings |
-| `Role` | read-write-configmaps | Allows namespaced read and write access to ConfigMaps |
-| `Role` | rollout-restart-deployments | Allows namespaced access to perform rollout restarts against Deployments |
-| `ServiceAccount` | blocky-cronjob-sa | Service Account used by the `update-blocky-dns-mappings-job` CronJob |
-| `ClusterRoleBinding` | blocky-cronjob-sa-read-dnsmappings | Bind the `blocky-cronjob-sa` Service Account and the `read-dnsmappings` ClusterRole |
-| `RoleBinding` | blocky-cronjob-sa-read-write-configmaps | Bind the `blocky-cronjob-sa` Service Account and the `read-write-configmaps` Role |
-| `RoleBinding` | blocky-cronjob-sa-rollout-restart-deployments | Bind the `blocky-cronjob-sa` Service Account and the `rollout-restart-deployments` Role |
-| `ConfigMap` | blocky-configuration | ConfigMap containing Blocky configuration |
-| `Deployment` | blocky | Deployment that manages the Blocky app |
-| `Service` | blocky-service | Service for the `blocky` Deployment |
-| `CronJob` | update-blocky-dns-mappings-job | CronJob that updates the `blocky-configuration` ConfigMap with values discovered in DnsMapping resources |
+| Kind                       | Name                                          | Description                                                                                              |
+| -------------------------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `CustomResourceDefinition` | <span>dnsmappings.blocky.io</span>            | CRD providing a resource other charts can create to define custom DNS mappings                           |
+| `ClusterRole`              | read-dnsmappings                              | Allows cluster-wide read access to DnsMappings                                                           |
+| `Role`                     | read-write-configmaps                         | Allows namespaced read and write access to ConfigMaps                                                    |
+| `Role`                     | rollout-restart-deployments                   | Allows namespaced access to perform rollout restarts against Deployments                                 |
+| `ServiceAccount`           | blocky-cronjob-sa                             | Service Account used by the `update-blocky-dns-mappings-job` CronJob                                     |
+| `ClusterRoleBinding`       | blocky-cronjob-sa-read-dnsmappings            | Bind the `blocky-cronjob-sa` Service Account and the `read-dnsmappings` ClusterRole                      |
+| `RoleBinding`              | blocky-cronjob-sa-read-write-configmaps       | Bind the `blocky-cronjob-sa` Service Account and the `read-write-configmaps` Role                        |
+| `RoleBinding`              | blocky-cronjob-sa-rollout-restart-deployments | Bind the `blocky-cronjob-sa` Service Account and the `rollout-restart-deployments` Role                  |
+| `ConfigMap`                | blocky-configuration                          | ConfigMap containing Blocky configuration                                                                |
+| `Deployment`               | blocky                                        | Deployment that manages the Blocky app                                                                   |
+| `Service`                  | blocky-service                                | Service for the `blocky` Deployment                                                                      |
+| `CronJob`                  | update-blocky-dns-mappings-job                | CronJob that updates the `blocky-configuration` ConfigMap with values discovered in DnsMapping resources |
 
 ### Parameters
 |               Parameter                |                                        Description                                        |                             Default Value                              |
@@ -32,5 +32,7 @@
 |  `deployment.resources.limits.memory`  |                              The limit for memory allocation                              |                               `"128Mi"`                                |
 |  `deployment.resources.requests.cpu`   |                          The initial request for cpu allocation                           |                                `"50m"`                                 |
 | `deployment.resources.requests.memory` |                         The initial request for memory allocation                         |                                `"64Mi"`                                |
+|          `service.exposeHTTP`          |               Determines whether the service will expose the HTTP (80) port               |                                 `true`                                 |
+|         `service.exposeHTTPS`          |              Determines whether the service will expose the HTTPS (443) port              |                                 `true`                                 |
 |        `service.loadBalancerIP`        |                     The IP address to requests from the load balancer                     |                                  `""`                                  |
 |             `service.type`             |                               The type of service to create                               |                            `"LoadBalancer"`                            |

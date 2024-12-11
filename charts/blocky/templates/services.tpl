@@ -20,14 +20,18 @@ spec:
       port: 53
       targetPort: 53
       protocol: UDP
+    {{- if .Values.service.exposeHTTP }}
     - name: http
       port: 80
       targetPort: {{ .Values.deployment.httpPort | default 4000 }}
       protocol: TCP
+    {{- end }}
+    {{- if .Values.service.exposeHTTPS }}
     - name: https
       port: 443
       targetPort: {{ .Values.deployment.httpPort | default 4000 }}
       protocol: TCP
+    {{- end }}
   selector:
     app: blocky
 {{- end -}}

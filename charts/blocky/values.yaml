@@ -27,3 +27,5 @@ deployment:
 service:
   loadBalancerIP: ""
   type: LoadBalancer
+  exposeHTTP: true
+  exposeHTTPS: true
