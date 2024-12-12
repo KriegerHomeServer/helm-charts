@@ -5,8 +5,8 @@ metadata:
   name: blocky-portal
   namespace: {{ .Release.Namespace }}
 spec:
-  domain: {{ .Value.dnsMappings.portal.domain }}
-  ip: {{ .Value.service.loadBalancerIP }}
+  domain: {{ .Values.dnsMappings.portal.domain }}
+  ip: {{ .Values.service.loadBalancerIP }}
 ---
   {{- range $mapping := $.Values.dnsMappings.custom }}
 apiVersion: blocky.io/v1

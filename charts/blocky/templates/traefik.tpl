@@ -1,4 +1,4 @@
-{{- define "helm-charts.blocky.dns-mappings" -}}
+{{- define "helm-charts.blocky.traefik" -}}
   {{- if .Values.traefik.enabled }}
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
