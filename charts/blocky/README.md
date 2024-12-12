@@ -32,4 +32,10 @@
 |  `deployment.resources.limits.memory`  |                              The limit for memory allocation                              |                               `"128Mi"`                                |
 |  `deployment.resources.requests.cpu`   |                          The initial request for cpu allocation                           |                                `"50m"`                                 |
 | `deployment.resources.requests.memory` |                         The initial request for memory allocation                         |                                `"64Mi"`                                |
+|      `dnsMappings.portal.domain`       |                         The domain for the web portal DNS mapping                         |                            `"blocky.local"`                            |
+|         `dnsMappings.custom[]`         |                              A list of DNS mappings to apply                              |                                  `[]`                                  |
+|      `dnsMappings.custom[*].name`      |                                 The name of a DNS mapping                                 |                                  `""`                                  |
+|     `dnsMappings.custom[*].domain`     |                                The domain of a DNS mapping                                |                                  `""`                                  |
+|       `dnsMappings.custom[*].ip`       |                                  The ip of a DNS mapping                                  |                                  `""`                                  |
 |        `service.loadBalancerIP`        |                     The IP address to requests from the load balancer                     |                                  `""`                                  |
+|           `traefik.enabled`            |                  Set whether the traefik ingress route should be enabled                  |                                `false`                                 |

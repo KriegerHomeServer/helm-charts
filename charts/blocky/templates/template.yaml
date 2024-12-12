@@ -18,3 +18,7 @@
 {{ include "helm-charts.blocky.services" . }}
 ---
 {{ include "helm-charts.blocky.cron-jobs" . }}
+---
+{{ include "helm-charts.blocky.dns-mappings" . }}
+---
+{{ include "helm-charts.blocky.traefik" . }}

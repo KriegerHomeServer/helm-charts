@@ -24,5 +24,12 @@ deployment:
     requests:
       cpu: 50m
       memory: 64Mi
-services:
+dnsMappings:
+  portal:
+    domain: "blocky.local"
+    ip: ""
+  custom: []
+service:
   loadBalancerIP: ""
+traefik:
+  enabled: false
