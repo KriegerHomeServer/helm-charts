@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: blocky-service
+  name: blocky-service-lb
   namespace: {{ .Release.Namespace }}
 spec:
   type: LoadBalancer
@@ -22,7 +22,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: blocky-service
+  name: blocky-service-cip
   namespace: {{ .Release.Namespace }}
 spec:
   type: ClusterIP
