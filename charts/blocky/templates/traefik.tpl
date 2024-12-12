@@ -5,6 +5,8 @@ kind: IngressRoute
 metadata:
   name: blocky-ingress
   namespace: {{ .Release.Namespace }}
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
 spec:
   entryPoints:
     - web
