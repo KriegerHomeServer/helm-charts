@@ -13,7 +13,7 @@ apiVersion: blocky.io/v1
 kind: DnsMapping
 metadata:
   name: {{ $mapping.name }}
-  namespace: {{ .Release.Namespace }}
+  namespace: {{ $.Release.Namespace }}
 spec:
   domain: {{ $mapping.domain }}
   ip: {{ $mapping.ip }}
