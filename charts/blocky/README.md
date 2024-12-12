@@ -32,7 +32,4 @@
 |  `deployment.resources.limits.memory`  |                              The limit for memory allocation                              |                               `"128Mi"`                                |
 |  `deployment.resources.requests.cpu`   |                          The initial request for cpu allocation                           |                                `"50m"`                                 |
 | `deployment.resources.requests.memory` |                         The initial request for memory allocation                         |                                `"64Mi"`                                |
-|          `service.exposeHTTP`          |               Determines whether the service will expose the HTTP (80) port               |                                 `true`                                 |
-|         `service.exposeHTTPS`          |              Determines whether the service will expose the HTTPS (443) port              |                                 `true`                                 |
 |        `service.loadBalancerIP`        |                     The IP address to requests from the load balancer                     |                                  `""`                                  |
-|             `service.type`             |                               The type of service to create                               |                            `"LoadBalancer"`                            |
