@@ -32,4 +32,4 @@ dnsMappings:
 service:
   loadBalancerIP: ""
 traefik:
-  enabled: false
+  enabled: true

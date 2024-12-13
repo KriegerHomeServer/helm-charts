@@ -9,8 +9,8 @@ metadata:
 spec:
   domain: {{ .Values.dnsMappings.portal.domain }}
   ip: {{ .Values.service.loadBalancerIP }}
----
   {{- range $mapping := $.Values.dnsMappings.custom }}
+---
 apiVersion: blocky.io/v1
 kind: DnsMapping
 metadata:
@@ -21,6 +21,5 @@ metadata:
 spec:
   domain: {{ $mapping.domain }}
   ip: {{ $mapping.ip }}
----
   {{- end }}
 {{- end -}}
