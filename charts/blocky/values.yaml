@@ -25,11 +25,11 @@ deployment:
       cpu: 50m
       memory: 64Mi
 dnsMappings:
-  portal:
+  dashboard:
     domain: "blocky.local"
     ip: ""
   custom: []
 service:
   loadBalancerIP: ""
 traefik:
-  enabled: true
+  enable: false

@@ -2,25 +2,25 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: blocky-cronjob-sa-read-write-configmaps
+  name: cronjob-sa-full-access-configmaps
   namespace: {{ .Release.Namespace }}
 subjects:
 - kind: ServiceAccount
-  name: blocky-cronjob-sa
+  name: cronjob-sa
   namespace: {{ .Release.Namespace }}
 roleRef:
   kind: Role
-  name: read-write-configmaps
+  name: full-access-configmaps
   apiGroup: rbac.authorization.k8s.io
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: blocky-cronjob-sa-rollout-restart-deployments
+  name: cronjob-sa-rollout-restart-deployments
   namespace: {{ .Release.Namespace }}
 subjects:
 - kind: ServiceAccount
-  name: blocky-cronjob-sa
+  name: cronjob-sa
   namespace: {{ .Release.Namespace }}
 roleRef:
   kind: Role

@@ -1,5 +1,5 @@
 {{- define "helm-charts.blocky.traefik" -}}
-  {{- if .Values.traefik.enabled }}
+  {{- if .Values.traefik.enable }}
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:

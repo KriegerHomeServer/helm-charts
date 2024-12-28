@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: blocky-configuration
+  name: blocky-config
   namespace: {{ .Release.Namespace }}
 data:
   config.yml: |-

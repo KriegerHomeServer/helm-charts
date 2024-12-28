@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: blocky
+  name: blocky-app
   namespace: {{ .Release.Namespace }}
   labels:
     app: blocky
@@ -19,7 +19,7 @@ spec:
         app: blocky
     spec:
       containers:
-        - name: app-blocky
+        - name: application
           image: "{{ .Values.deployment.image.repository | default "spx01/blocky" }}:{{ .Values.deployment.image.tag | default "latest" }}"
           imagePullPolicy: {{ .Values.deployment.image.pullPolicy | default "IfNotPresent" }}
           resources:
@@ -43,6 +43,6 @@ spec:
       volumes:
         - name: blocky-config
           configMap:
-            name: blocky-configuration
+            name: app-config
       restartPolicy: Always
 {{- end -}}

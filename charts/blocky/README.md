@@ -1,18 +1,20 @@
 ### Resources Created
-| Kind                       | Name                                          | Description                                                                                              |
-| -------------------------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `CustomResourceDefinition` | <span>dnsmappings.blocky.io</span>            | CRD providing a resource other charts can create to define custom DNS mappings                           |
-| `ClusterRole`              | read-dnsmappings                              | Allows cluster-wide read access to DnsMappings                                                           |
-| `Role`                     | read-write-configmaps                         | Allows namespaced read and write access to ConfigMaps                                                    |
-| `Role`                     | rollout-restart-deployments                   | Allows namespaced access to perform rollout restarts against Deployments                                 |
-| `ServiceAccount`           | blocky-cronjob-sa                             | Service Account used by the `update-blocky-dns-mappings-job` CronJob                                     |
-| `ClusterRoleBinding`       | blocky-cronjob-sa-read-dnsmappings            | Bind the `blocky-cronjob-sa` Service Account and the `read-dnsmappings` ClusterRole                      |
-| `RoleBinding`              | blocky-cronjob-sa-read-write-configmaps       | Bind the `blocky-cronjob-sa` Service Account and the `read-write-configmaps` Role                        |
-| `RoleBinding`              | blocky-cronjob-sa-rollout-restart-deployments | Bind the `blocky-cronjob-sa` Service Account and the `rollout-restart-deployments` Role                  |
-| `ConfigMap`                | blocky-configuration                          | ConfigMap containing Blocky configuration                                                                |
-| `Deployment`               | blocky                                        | Deployment that manages the Blocky app                                                                   |
-| `Service`                  | blocky-service                                | Service for the `blocky` Deployment                                                                      |
-| `CronJob`                  | update-blocky-dns-mappings-job                | CronJob that updates the `blocky-configuration` ConfigMap with values discovered in DnsMapping resources |
+| Kind                       | Name                                   | Description                                                                                              |
+| -------------------------- | -------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `CustomResourceDefinition` | <span>dnsmappings.blocky.io</span>     | CRD providing a resource other charts can create to define custom DNS mappings                           |
+| `ClusterRole`              | read-dnsmappings                       | Allows cluster-wide read access to DnsMappings                                                           |
+| `Role`                     | full-access-configmaps                 | Allows namespaced read and write access to ConfigMaps                                                    |
+| `Role`                     | rollout-restart-deployments            | Allows namespaced access to perform rollout restarts against Deployments                                 |
+| `ServiceAccount`           | cronjob-sa                             | Service Account used by the `update-blocky-dns-mappings-job` CronJob                                     |
+| `ClusterRoleBinding`       | cronjob-sa-read-dnsmappings            | Bind the `blocky-cronjob-sa` Service Account and the `read-dnsmappings` ClusterRole                      |
+| `RoleBinding`              | cronjob-sa-full-access-configmaps      | Bind the `blocky-cronjob-sa` Service Account and the `read-write-configmaps` Role                        |
+| `RoleBinding`              | cronjob-sa-rollout-restart-deployments | Bind the `blocky-cronjob-sa` Service Account and the `rollout-restart-deployments` Role                  |
+| `ConfigMap`                | blocky-config                          | ConfigMap containing Blocky configuration                                                                |
+| `Deployment`               | blocky-app                             | Deployment that manages the Blocky app                                                                   |
+| `Service`                  | blocky-service-lb                      | LoadBalancer service for the `blocky` Deployment                                                         |
+| `Service`                  | blocky-service-cip                     | ClusterIP service for the `blocky` Deployment                                                            |
+| `CronJob`                  | update-dns-mappings-job                | CronJob that updates the `blocky-configuration` ConfigMap with values discovered in DnsMapping resources |
+| `DnsMapping`               | blocky-dashboard                       | DNS Mapping for the Blocky dashboard                                                                     |
 
 ### Parameters
 |               Parameter                |                                        Description                                        |                             Default Value                              |
@@ -32,7 +34,8 @@
 |  `deployment.resources.limits.memory`  |                              The limit for memory allocation                              |                               `"128Mi"`                                |
 |  `deployment.resources.requests.cpu`   |                          The initial request for cpu allocation                           |                                `"50m"`                                 |
 | `deployment.resources.requests.memory` |                         The initial request for memory allocation                         |                                `"64Mi"`                                |
-|      `dnsMappings.portal.domain`       |                         The domain for the web portal DNS mapping                         |                            `"blocky.local"`                            |
+|     `dnsMappings.dashboard.domain`     |                         The domain for the dashboard DNS mapping                          |                            `"blocky.local"`                            |
+|       `dnsMappings.dashboard.ip`       |                           The ip for the dashboard DNS mapping                            |                            `"blocky.local"`                            |
 |         `dnsMappings.custom[]`         |                              A list of DNS mappings to apply                              |                                  `[]`                                  |
 |      `dnsMappings.custom[*].name`      |                                 The name of a DNS mapping                                 |                                  `""`                                  |
 |     `dnsMappings.custom[*].domain`     |                                The domain of a DNS mapping                                |                                  `""`                                  |
