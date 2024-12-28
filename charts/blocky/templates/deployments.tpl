@@ -43,6 +43,6 @@ spec:
       volumes:
         - name: blocky-config
           configMap:
-            name: app-config
+            name: blocky-config
       restartPolicy: Always
 {{- end -}}
