@@ -31,5 +31,3 @@ dnsMappings:
   custom: []
 service:
   loadBalancerIP: ""
-traefik:
-  enable: false
