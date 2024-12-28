@@ -40,6 +40,15 @@ spec:
               protocol: UDP
             - containerPort: {{ .Values.deployment.httpPort | default 4000 }}
               protocol: TCP
+          startupProbe:
+            httpGet:
+              path: /
+              port: {{ .Values.deployment.httpPort | default 4000 }}
+          livenessProbe:
+            httpGet:
+              path: /
+              port: {{ .Values.deployment.httpPort | default 4000 }}
+            periodSecond: 30
       volumes:
         - name: blocky-config
           configMap:
