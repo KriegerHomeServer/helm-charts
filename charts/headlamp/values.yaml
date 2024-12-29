@@ -1,0 +1,11 @@
+# Values for headlamp depedency
+headlamp:
+  nameOverride: headlamp
+  fullnameOverride: headlamp
+
+# Values for custom chart
+nameOverride: headlamp
+fullnameOverride: headlamp
+traefik:
+  domain: home.local
+  subdomain: headlamp
