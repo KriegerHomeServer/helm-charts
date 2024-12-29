@@ -172,4 +172,19 @@ entries:
     urls:
     - https://github.com/KriegerHomeServer/helm-charts/releases/download/blockydns-1.0.0/blockydns-1.0.0.tgz
     version: 1.0.0
-generated: "2024-12-28T21:58:55.550076996Z"
+  headlamp:
+  - apiVersion: v2
+    appVersion: 0.27.0
+    created: "2024-12-29T00:11:30.846826638Z"
+    dependencies:
+    - name: headlamp
+      repository: https://headlamp-k8s.github.io/headlamp/
+      version: 0.27.0
+    description: A Helm chart for deploying the Headlamp dashboard
+    digest: 1ca4f7d273d828f4302b6617333abedab27e1ae5075c8edc2af19deeb1f49eac
+    name: headlamp
+    type: application
+    urls:
+    - https://github.com/KriegerHomeServer/helm-charts/releases/download/headlamp-0.0.01/headlamp-0.0.01.tgz
+    version: 0.0.01
+generated: "2024-12-29T00:11:30.846872624Z"
