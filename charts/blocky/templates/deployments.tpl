@@ -44,11 +44,14 @@ spec:
             httpGet:
               path: /
               port: {{ .Values.deployment.httpPort | default 4000 }}
+            failureThreshold: 10
+            periodSeconds: 30
           livenessProbe:
             httpGet:
               path: /
               port: {{ .Values.deployment.httpPort | default 4000 }}
             periodSecond: 30
+            failureThreshold: 1
       volumes:
         - name: blocky-config
           configMap:
