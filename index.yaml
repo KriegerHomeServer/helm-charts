@@ -185,6 +185,20 @@ entries:
   headlamp:
   - apiVersion: v2
     appVersion: 0.27.0
+    created: "2024-12-31T04:00:17.478401921Z"
+    dependencies:
+    - name: headlamp
+      repository: https://headlamp-k8s.github.io/headlamp/
+      version: 0.27.0
+    description: A Helm chart for deploying the Headlamp dashboard
+    digest: 03647e9323ccfcb0c0f6822f5f16a6b0c6fc9b8ef567d3db75e6c6d22d5efe47
+    name: headlamp
+    type: application
+    urls:
+    - https://github.com/KriegerHomeServer/helm-charts/releases/download/headlamp-0.0.03/headlamp-0.0.03.tgz
+    version: 0.0.03
+  - apiVersion: v2
+    appVersion: 0.27.0
     created: "2024-12-31T03:42:35.975564037Z"
     dependencies:
     - name: headlamp
@@ -214,6 +228,16 @@ entries:
   lldap:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2024-12-31T04:00:17.59426693Z"
+    description: A Helm chart for deploying LLDAP
+    digest: c4df3b28759054db4926d40081e8a95406e65e68a51a5166c5e181a6b3ffa372
+    name: lldap
+    type: application
+    urls:
+    - https://github.com/KriegerHomeServer/helm-charts/releases/download/lldap-0.0.02/lldap-0.0.02.tgz
+    version: 0.0.02
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2024-12-31T03:42:36.187828407Z"
     description: A Helm chart for deploying LLDAP
     digest: 9e17b456831e920ee9f7a8430b4097b434077e48f72efaec9ddedf49412ab234
@@ -222,4 +246,4 @@ entries:
     urls:
     - https://github.com/KriegerHomeServer/helm-charts/releases/download/lldap-0.0.01/lldap-0.0.01.tgz
     version: 0.0.01
-generated: "2024-12-31T03:42:36.187881426Z"
+generated: "2024-12-31T04:00:17.594344846Z"
