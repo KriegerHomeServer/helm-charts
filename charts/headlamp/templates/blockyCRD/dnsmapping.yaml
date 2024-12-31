@@ -5,6 +5,6 @@ metadata:
   name: headlamp
   namespace: {{ .Release.Namespace }}
 spec:
-  domain: {{ printf "%s.%s" .Values.blocky.dnsMapping.subdomain .Values.blocky.dnsMapping.domain }}
-  ip: {{ .Values.blocky.ip }}
+  domain: "{{ .Values.blocky.dnsMapping.subdomain }}.{{ .Values.blocky.dnsMapping.domain }}"
+  ip: {{ .Values.blocky.dnsMapping.ip }}
 {{- end -}}

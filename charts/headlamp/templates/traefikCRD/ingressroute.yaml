@@ -9,7 +9,7 @@ spec:
     - web
   routes:
     - kind: Rule
-      match: {{ printf "Host(`%s.%s`)" .Values.traefik.subdomain .Values.traefik.domain }}
+      match: "Host(`{{ .Values.traefik.subdomain }}.{{ .Values.traefik.domain }}`)"
       services:
         - kind: Service
           name: {{ .Values.headlamp.fullnameOverride }}

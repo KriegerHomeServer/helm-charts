@@ -6,5 +6,5 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   domain: "{{ .Values.blocky.dnsMapping.subdomain }}.{{ .Values.blocky.dnsMapping.domain }}"
-  ip: {{ .Values.blocky.ip }}
+  ip: {{ .Values.blocky.dnsMapping.ip }}
 {{- end -}}
