@@ -1,0 +1,17 @@
+{{- if .Values.traefik.enabled -}}
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: lldap
+  namespace: {{ .Release.Namespace }}
+spec:
+  entryPoints:
+    - web
+  routes:
+    - kind: Rule
+      match: "Host(`{{ .Values.traefik.subdomain }}.{{ .Values.traefik.domain }}`)"
+      services:
+        - kind: Service
+          name: lldap
+          port: http
+{{- end -}}

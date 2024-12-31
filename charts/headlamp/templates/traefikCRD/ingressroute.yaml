@@ -1,8 +1,8 @@
----
+{{- if .Values.traefik.enabled -}}
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
-  name: {{ include "headlamp.fullname" . }}
+  name: headlamp
   namespace: {{ .Release.Namespace }}
 spec:
   entryPoints:
@@ -12,5 +12,6 @@ spec:
       match: {{ printf "Host(`%s.%s`)" .Values.traefik.subdomain .Values.traefik.domain }}
       services:
         - kind: Service
-          name: {{ include "headlamp.fullname" . }}
+          name: {{ .Values.headlamp.fullnameOverride }}
           port: http
+{{- end -}}

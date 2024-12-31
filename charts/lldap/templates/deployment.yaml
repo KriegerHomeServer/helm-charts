@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lldap
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: lldap
+spec:
+  replicas: {{ .Values.deployment.replicaCount | default 1 }}
+  selector:
+    matchLabels:
+      app: lldap
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: lldap
+    spec:
+      containers:
+        - name: application
+          image: "{{ .Values.deployment.image.repository | default "nitnelave/lldap" }}:{{ .Values.deployment.image.tag | default "latest" }}"
+          imagePullPolicy: {{ .Values.deployment.image.pullPolicy | default "IfNotPresent" }}
+          resources:
+            limits:
+              cpu: {{ .Values.deployment.resources.limits.cpu | default "50m" }}
+              memory: {{ .Values.deployment.resources.limits.memory | default "64Mi" }}
+            requests:
+              cpu: {{ .Values.deployment.resources.requests.cpu | default "50m" }}
+              memory: {{ .Values.deployment.resources.requests.memory | default "64Mi" }}
+          env:
+            - name: TZ
+              value: "{{ .Values.deployment.env.TZ }}"
+            - name: GID
+              value: "{{ .Values.deployment.env.GID }}"
+            - name: UID
+              value: "{{ .Values.deployment.env.UID }}"
+            - name: LLDAP_JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: lldap-credentials
+                  key: lldap-jwt-secret
+            - name: LLDAP_LDAP_BASE_DN
+              valueFrom:
+                secretKeyRef:
+                  name: lldap-credentials
+                  key: base-dn
+            - name: LLDAP_LDAP_USER_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: lldap-credentials
+                  key: lldap-ldap-user-pass
+          ports:
+            - name: ldap-tcp
+              containerPort: 3890
+              protocol: TCP
+            - name: ldap-udp
+              containerPort: 3890
+              protocol: UDP
+            - name: http
+              containerPort: 17170
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /data
+              name: lldap-data
+      volumes:
+        - name: lldap-data
+          persistentVolumeClaim:
+            claimName: lldap-data
+      {{- with .Values.deployment.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 6 }}
+      {{- end }}
+      {{- with .Values.deployment.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 6 }}
+      {{- end }}
+      {{- with .Values.deployment.affinity }}
+      affinity:
+        {{- toYaml . | nindent 6 }}
+      {{- end }}

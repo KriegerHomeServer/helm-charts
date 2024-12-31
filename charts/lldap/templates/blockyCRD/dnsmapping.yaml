@@ -1,0 +1,10 @@
+{{- if .Values.blocky.enabled -}}
+apiVersion: blocky.io/v1
+kind: DnsMapping
+metadata:
+  name: headlamp
+  namespace: {{ .Release.Namespace }}
+spec:
+  domain: "{{ .Values.blocky.dnsMapping.subdomain }}.{{ .Values.blocky.dnsMapping.domain }}"
+  ip: {{ .Values.blocky.ip }}
+{{- end -}}

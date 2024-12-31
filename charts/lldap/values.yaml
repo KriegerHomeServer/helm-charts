@@ -1,0 +1,41 @@
+secret:
+  lldapBaseDn: "dc=home,dc=local"
+  lldapJwtSecret: "wobY6RK/Dc0vL21zFiIZs9iyVy0NQ3ldijYPQ4HLWTc="
+  lldapUserPass: "changeit"
+
+persistence:
+  accessMode: "ReadWriteOnce"
+  storageClassName: ""
+  storageSize: "100Mi"
+
+deployment:
+  replicaCount: 1
+  env:
+    GID: "0"
+    UID: "0"
+    TZ: "CET"
+  image:
+    pullPolicy: "IfNotPresent"
+    repository: "nitnelave/lldap"
+    tag: "latest"
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
+  affinity: {}
+  nodeSelector: {}
+  tolerations: []
+
+traefik:
+  enabled: false
+  domain: home.local
+  subdomain: lldap
+
+blocky:
+  enabled: false
+  domain: home.local
+  subdomain: lldap
+  ip: ""

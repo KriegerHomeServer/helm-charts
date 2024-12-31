@@ -3,9 +3,16 @@ headlamp:
   nameOverride: headlamp
   fullnameOverride: headlamp
 
-# Values for custom chart
-nameOverride: headlamp
-fullnameOverride: headlamp
 traefik:
+  enabled: true
   domain: home.local
   subdomain: headlamp
+
+blocky:
+  enabled: true
+  dnsMapping:
+    domain: home.local
+    subdomain: headlamp
+    ip: ""
+
+# TODO: Plugin support via chart?

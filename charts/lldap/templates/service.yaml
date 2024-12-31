@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lldap
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: lldap
+spec:
+  type: ClusterIP
+  selector:
+    app: lldap
+  ports:
+    - name: ldap-tcp
+      port: 389
+      targetPort: ldap-tcp
+      protocol: TCP
+    - name: ldap-udp
+      port: 389
+      targetPort: ldap-udp
+      protocol: UDP
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP
