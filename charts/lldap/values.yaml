@@ -1,7 +1,7 @@
 secret:
-  lldapBaseDn: "dc=home,dc=local"
-  lldapJwtSecret: "wobY6RK/Dc0vL21zFiIZs9iyVy0NQ3ldijYPQ4HLWTc="
-  lldapUserPass: "changeit"
+  baseDn: "dc=home,dc=local"
+  jwtSecret: "wobY6RK/Dc0vL21zFiIZs9iyVy0NQ3ldijYPQ4HLWTc="
+  defaultAdminPass: "changeit"
 
 persistence:
   accessMode: "ReadWriteOnce"
