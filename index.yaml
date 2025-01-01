@@ -228,6 +228,16 @@ entries:
   lldap:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-01-01T21:43:38.360875891Z"
+    description: A Helm chart for deploying LLDAP
+    digest: dbf70351de4573368692874c640a0df561ad7cb7e1a7d94fb4a348a3c38e356e
+    name: lldap
+    type: application
+    urls:
+    - https://github.com/KriegerHomeServer/helm-charts/releases/download/lldap-0.0.03/lldap-0.0.03.tgz
+    version: 0.0.03
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2024-12-31T04:00:17.59426693Z"
     description: A Helm chart for deploying LLDAP
     digest: c4df3b28759054db4926d40081e8a95406e65e68a51a5166c5e181a6b3ffa372
@@ -246,4 +256,19 @@ entries:
     urls:
     - https://github.com/KriegerHomeServer/helm-charts/releases/download/lldap-0.0.01/lldap-0.0.01.tgz
     version: 0.0.01
-generated: "2024-12-31T04:00:17.594344846Z"
+  metallb:
+  - apiVersion: v2
+    appVersion: 0.14.9
+    created: "2025-01-01T21:43:38.449361566Z"
+    dependencies:
+    - name: metallb
+      repository: https://metallb.github.io/metallb/
+      version: 0.14.9
+    description: A Helm chart for deploying MetalLB as the load balancer
+    digest: c2612326ac38cfc2d388f148b5b01199a16b4e8f733e4a07331321176b2fab1d
+    name: metallb
+    type: application
+    urls:
+    - https://github.com/KriegerHomeServer/helm-charts/releases/download/metallb-0.0.01/metallb-0.0.01.tgz
+    version: 0.0.01
+generated: "2025-01-01T21:43:38.44942752Z"
