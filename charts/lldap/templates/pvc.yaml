@@ -1,22 +1,4 @@
 apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: lldap-pv
-  namespace: {{ .Release.Namespace }}
-  labels:
-    app: lldap
-spec:
-  storageClassName: {{ .Values.persistence.storageClassName }}
-  capacity:
-    storage: {{ .Values.persistence.storageSize }}
-  accessModes:
-    - {{ .Values.persistence.accessMode }}
-  persistentVolumeReclaimPolicy: Retain
-  claimRef:
-    namespace: {{ .Release.Namespace }}
-    name: lldap-pvc
----
-apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: lldap-pvc
@@ -27,4 +9,6 @@ spec:
   storageClassName: {{ .Values.persistence.storageClassName }}
   accessModes:
     - {{ .Values.persistence.accessMode }}
-  volumeName: lldap-pv
+  resources:
+    requests:
+      storage: {{ .Values.persistence.storageSize }}

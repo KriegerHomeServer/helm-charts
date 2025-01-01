@@ -2,5 +2,5 @@ apiVersion: v2
 name: lldap
 description: A Helm chart for deploying LLDAP
 type: application
-version: 0.0.03
+version: 0.0.04
 appVersion: 1.16.0
