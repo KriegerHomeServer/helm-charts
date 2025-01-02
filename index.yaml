@@ -228,6 +228,16 @@ entries:
   lldap:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-01-02T00:44:54.874939579Z"
+    description: A Helm chart for deploying LLDAP
+    digest: 4d0a316d3de344a278a967681a8c51ebab7938f10851e62a175cd78b259b58bb
+    name: lldap
+    type: application
+    urls:
+    - https://github.com/KriegerHomeServer/helm-charts/releases/download/lldap-0.0.05/lldap-0.0.05.tgz
+    version: 0.0.05
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-01-01T23:18:58.518552143Z"
     description: A Helm chart for deploying LLDAP
     digest: 3b82ea8793de324df6397997e22b505128dee2d142dccb53119aedabf5101e53
@@ -295,4 +305,4 @@ entries:
     urls:
     - https://github.com/KriegerHomeServer/helm-charts/releases/download/metallb-0.0.01/metallb-0.0.01.tgz
     version: 0.0.01
-generated: "2025-01-01T23:18:58.631968253Z"
+generated: "2025-01-02T00:44:54.875009189Z"
