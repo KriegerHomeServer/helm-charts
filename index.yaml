@@ -348,4 +348,15 @@ entries:
     urls:
     - https://github.com/KriegerHomeServer/helm-charts/releases/download/metallb-0.0.01/metallb-0.0.01.tgz
     version: 0.0.01
-generated: "2025-01-03T01:01:55.124772371Z"
+  metallb-configuration:
+  - apiVersion: v2
+    appVersion: 0.14.9
+    created: "2025-01-03T01:42:29.564610181Z"
+    description: A Helm chart for deploying MetalLB configurations
+    digest: 8d09ce513538b398bb0151f7a57f15801061e32bd9f4585a70b8060f788922f4
+    name: metallb-configuration
+    type: application
+    urls:
+    - https://github.com/KriegerHomeServer/helm-charts/releases/download/metallb-configuration-0.0.01/metallb-configuration-0.0.01.tgz
+    version: 0.0.01
+generated: "2025-01-03T01:42:29.564727761Z"
