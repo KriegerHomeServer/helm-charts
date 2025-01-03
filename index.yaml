@@ -294,6 +294,20 @@ entries:
   metallb:
   - apiVersion: v2
     appVersion: 0.14.9
+    created: "2025-01-03T01:01:55.124701579Z"
+    dependencies:
+    - name: metallb
+      repository: https://metallb.github.io/metallb/
+      version: 0.14.9
+    description: A Helm chart for deploying MetalLB as the load balancer
+    digest: e1a1e0ff19461a818db3c325a716fb867145d16c40cf3ef4f7e76f6c2ff1ad8b
+    name: metallb
+    type: application
+    urls:
+    - https://github.com/KriegerHomeServer/helm-charts/releases/download/metallb-0.0.04/metallb-0.0.04.tgz
+    version: 0.0.04
+  - apiVersion: v2
+    appVersion: 0.14.9
     created: "2025-01-03T00:42:40.533485864Z"
     dependencies:
     - name: metallb
@@ -334,4 +348,4 @@ entries:
     urls:
     - https://github.com/KriegerHomeServer/helm-charts/releases/download/metallb-0.0.01/metallb-0.0.01.tgz
     version: 0.0.01
-generated: "2025-01-03T00:42:40.533558009Z"
+generated: "2025-01-03T01:01:55.124772371Z"
