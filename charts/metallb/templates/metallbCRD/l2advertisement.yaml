@@ -3,9 +3,7 @@ apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
 metadata:
   name: l2-advertisement
-  namespace: system-metallb
-  annotations:
-    "helm.sh/hook": post-install,post-upgrade
+  namespace: {{ $.Release.Namespace }}
 spec:
   ipAddressPools:
   {{- range $pool := $.Values.ipAddressPools }}

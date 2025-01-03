@@ -2,7 +2,7 @@ apiVersion: v2
 name: metallb
 description: A Helm chart for deploying MetalLB as the load balancer
 type: application
-version: 0.0.02
+version: 0.0.03
 appVersion: 0.14.9
 dependencies:
   - name: metallb

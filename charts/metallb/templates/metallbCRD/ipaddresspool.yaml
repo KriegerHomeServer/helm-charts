@@ -6,8 +6,6 @@ kind: IPAddressPool
 metadata:
   name: {{ $pool.name }}
   namespace: {{ $.Release.Namespace }}
-  annotations:
-    "helm.sh/hook": post-install,post-upgrade
 spec:
   addresses:
 {{ toYaml $pool.addresses | indent 4 }}

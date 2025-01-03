@@ -1,1 +1,10 @@
+# MetalLB dependency chart values
+metallb:
+  crds:
+    enabled: false
+
+# Custom MetalLB chart values
 ipAddressPools: []
+
+blocky:
+  enabled: false
