@@ -1,0 +1,6 @@
+apiVersion: v2
+name: metallb-configuration
+description: A Helm chart for deploying MetalLB configurations
+type: application
+version: 0.0.01
+appVersion: 0.14.9
