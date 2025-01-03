@@ -1,5 +1,20 @@
 apiVersion: v1
 entries:
+  authentik:
+  - apiVersion: v2
+    appVersion: 2024.12.1
+    created: "2025-01-03T00:42:40.355359934Z"
+    dependencies:
+    - name: authentik
+      repository: https://charts.goauthentik.io/
+      version: 2024.12.1
+    description: A Helm chart for deploying Authentik for user authentication
+    digest: 0df2c6a9217378f400f6bb36835a8c18610fa110ce7f6bf9297a8387d2982525
+    name: authentik
+    type: application
+    urls:
+    - https://github.com/KriegerHomeServer/helm-charts/releases/download/authentik-0.0.01/authentik-0.0.01.tgz
+    version: 0.0.01
   blocky:
   - apiVersion: v2
     appVersion: "0.24"
@@ -279,6 +294,20 @@ entries:
   metallb:
   - apiVersion: v2
     appVersion: 0.14.9
+    created: "2025-01-03T00:42:40.533485864Z"
+    dependencies:
+    - name: metallb
+      repository: https://metallb.github.io/metallb/
+      version: 0.14.9
+    description: A Helm chart for deploying MetalLB as the load balancer
+    digest: 8176ed8e77d3e475b3355e4599d175b3d635bcbd11b9e169861ff13fc1e743e8
+    name: metallb
+    type: application
+    urls:
+    - https://github.com/KriegerHomeServer/helm-charts/releases/download/metallb-0.0.03/metallb-0.0.03.tgz
+    version: 0.0.03
+  - apiVersion: v2
+    appVersion: 0.14.9
     created: "2025-01-01T23:18:58.63188127Z"
     dependencies:
     - name: metallb
@@ -305,4 +334,4 @@ entries:
     urls:
     - https://github.com/KriegerHomeServer/helm-charts/releases/download/metallb-0.0.01/metallb-0.0.01.tgz
     version: 0.0.01
-generated: "2025-01-02T00:44:54.875009189Z"
+generated: "2025-01-03T00:42:40.533558009Z"
